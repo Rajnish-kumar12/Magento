@@ -1,0 +1,19 @@
+{
+    "log_table": {
+        "column": {
+            "logid": true,
+            "one_log": true,
+            "two_log": true,
+            "three_log": true,
+            "four_log": true,
+            "system_log": true,
+            "debug_log": true,
+            "exception_log": true,
+            "cron_log": true,
+            "support_report_log": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

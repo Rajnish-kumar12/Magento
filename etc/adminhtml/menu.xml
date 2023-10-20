@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Brainvire_Logs::logs" 
+        title="Logs" 
+        module="Brainvire_Logs" 
+        sortOrder="50" 
+        resource="Brainvire_Logs::logs"/>
+
+        <add id="Brainvire_Logs::logs_grid" 
+        title="Link to the Grid" 
+        module="Brainvire_Logs" 
+        sortOrder="10" 
+        action="log/index/index" 
+        parent="Brainvire_Logs::logs" 
+        resource="Brainvire_Logs::logs_grid"/>
+    </menu>
+</config>
