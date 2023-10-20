@@ -3,4 +3,5 @@
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Training_Impo',
     __DIR__
+    
 );
