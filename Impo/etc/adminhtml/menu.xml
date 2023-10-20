@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Training_Impo::impo_menu" 
+        title="Uiforms Import" 
+        module="Training_Impo" 
+        sortOrder="10"
+        resource="Training_Impo::impo_menu" />
+        <add id="Training_Impo::impo_sub_menu" 
+        title="Import Xml"
+        module="Training_Impo" 
+        sortOrder="10" 
+        action="impor/index/index" 
+        parent="Training_Impo::impo_menu" 
+        resource="Training_Impo::impo_sub_menu" />
+    </menu>
+</config>
