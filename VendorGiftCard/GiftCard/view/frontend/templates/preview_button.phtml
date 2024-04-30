@@ -1,0 +1,67 @@
+<button class="previews-button" type="button" id="preview-button"><?= $block->escapeHtml(__('Preview Giftcard')) ?></button>
+    <div id="giftcard-info-popup" style="display: none;">
+
+        <div class="gift-popup-header">
+            <div class="gift-logo">
+                <img src="<?php echo $block->getViewFileUrl('VendorGiftCard_GiftCard::images/logo.png'); ?>" alt="logo">
+            </div>
+            <div class="gift-surprise-content">
+                <h2 class="surprise-title">Gift Card</h2>
+                <p>Just For You</p>
+            </div>
+        </div>
+
+        <div class="gift-card-product-img">
+            <img id="product-image" src="<?php echo $block->getProductImageUrl(); ?>" alt="Product Image">            
+        </div>
+        <div class="gift-card-info">
+            <h2 class="gc-info-title">Gift card Information</h2>
+
+            <div class="gc-info-content">
+                <div class="gc-info-list">
+                    <strong><?=$block->escapeHtml(__('Sender Name:'))?></strong>
+                    <span id="sender-name"></span>
+                </div>
+
+                <div class="gc-info-list">
+                    <strong><?=$block->escapeHtml(__('Sender Email:'))?></strong>
+                    <span id="sender-email"></span>
+                </div>
+
+                <div class="gc-info-list">
+                    <strong><?=$block->escapeHtml(__('Recipient Name:'))?></strong>
+                    <span id="recipient-name"></span>
+                </div>
+
+                <div class="gc-info-list">
+                    <strong><?=$block->escapeHtml(__('Recipient Email:'))?></strong>
+                    <span id="recipient-email"></span>
+                </div>
+
+                <div class="gc-info-list">
+                    <strong>Gift Code:</strong>
+                    <span id="gift-code"><?=$block->escapeHtml(__('XXXXXXXX'))?></span>
+                </div>
+
+                <div class="action-button">
+                    <button type="button" class="gc-shopnow-btn">Shop Now</button>
+                </div>
+            </div>
+
+            <div class="gc-message">
+                <h2 class="gc-info-title">Gift message for you </h2>
+                <p id="message"></p>
+            </div>
+
+            <div class="gc-img-grid">
+                <img src="<?php echo $block->getViewFileUrl('VendorGiftCard_GiftCard::images/img04.png'); ?>" alt="img4">
+                <img src="<?php echo $block->getViewFileUrl('VendorGiftCard_GiftCard::images/img05.png'); ?>" alt="img5">
+                <img src="<?php echo $block->getViewFileUrl('VendorGiftCard_GiftCard::images/img06.png'); ?>" alt="img6">
+            </div>
+        </div>
+        <div class="gift-popup-footer">
+            <div class="gift-logo">
+                <img src="<?php echo $block->getViewFileUrl('VendorGiftCard_GiftCard::images/logo.png'); ?>" alt="logo">
+            </div>
+        </div>
+    </div>

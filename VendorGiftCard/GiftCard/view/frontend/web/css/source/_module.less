@@ -1,0 +1,307 @@
+
+@blue-border-color: #039be5;
+@blue-btn-color: #29b6f6;
+@border-color: #ededed;
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .page-product-giftcard,
+    .checkout-cart-configure {
+        .product-add-form {
+            .price-box {
+                display: inline-block;
+                width: 100%;
+            }
+            .fieldset {
+                .field {
+                    .label {
+                        font-size: 12px;
+                        font-weight: @font-weight__heavier;
+                    }
+                }
+            }
+        }
+    }
+
+    .page-product-giftcard {
+        .giftcard-amount {
+            .field {
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+        .product-options-bottom {
+            .lib-vendor-box-align(center);
+            .lib-vendor-prefix-display(flex);
+            .lib-vendor-prefix-flex-wrap(wrap);
+            width: 100%;
+
+            .box-tocart {
+                width: auto;
+            }
+        }   
+    }
+
+    .checkout-cart-configure {
+        .fieldset {
+            &.giftcard {
+                >.legend {
+                    .lib-visibility-hidden();
+                }
+            }
+            &.giftcard-amount {
+                &:last-child {
+                    margin-bottom: 0;
+                }        
+            }
+        }
+    }
+
+    .giftcard {
+        &.form {
+            .fieldset {
+                &.giftcard {
+                    .lib-vendor-prefix-display(flex);
+                    .lib-vendor-prefix-flex-wrap(wrap);
+                    justify-content: space-between;
+
+                    .field {
+                        max-width: 49%;
+                        width: 100%;
+
+                        &.text {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .previews-button {
+        .lib-button-primary();
+        height: 40px;
+        margin-left: 10px;
+        margin-top: 5px;
+        max-width: 160px;
+        width: 100%;
+    }
+
+    .modal-popup {
+        &.custom-giftcard-popup {
+            .modal-header {
+                padding: 0;
+            }
+            .modal-content {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .gift-popup-header {
+                .lib-vendor-prefix-display(flex);
+                .lib-vendor-box-align(center);
+                padding: 2rem;
+
+                .gift-surprise-content {
+                    margin-left: 40px;
+
+                    .surprise-title {
+                        font-weight: @font-weight__bold;
+                        margin: 0 0 5px;
+                    }
+                }
+            }
+
+            .gift-popup-header,
+            .gift-popup-footer {
+                .gift-logo {
+                    img {
+                        max-width: 120px;
+                        width: 100%;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .gift-card-product-img {
+                margin-bottom: 4rem; 
+            }
+            .gift-card-info {
+                padding: 0 2rem;
+
+                .gc-info-title {
+                    font-weight: @font-weight__bold;
+                    text-align: center;
+                }
+                .action-button {
+                    margin: 2rem 0;
+                    text-align: center;
+                }
+                .gc-shopnow-btn {
+                    .lib-button-primary(
+                        @_button-background: @blue-btn-color;
+                        @_button-background-hover: @blue-border-color;
+                        @_button-color: @color-white;
+                        @_button-color-hover: @color-white;
+                    );
+                    height: 40px;
+                }
+            }
+            .gc-info-content {
+                margin-bottom: 4rem;
+            }
+            .gc-info-list {
+                .lib-vendor-prefix-display(flex);
+                justify-content: space-between;
+                padding: 5px 0;
+                
+                strong,
+                span {
+                    width: 48%;
+                    word-break: break-all;
+                }
+
+                strong {
+                    margin-right: 5px;
+                }
+                span {
+                    margin-left: 5px;
+                }
+            }
+            .gc-message {
+                text-align: center;
+            }
+            .gc-img-grid {
+                .lib-vendor-prefix-display(flex);
+                justify-content: space-between;
+                margin-top: 2rem;
+
+                img {
+                    max-width: 32%;
+                    width: 100%;
+                }
+            }
+            
+            .gift-popup-footer {
+                margin-top: 4rem;
+                padding-top: 2rem;
+                border-top: 1px solid @border-color;
+                text-align: center;
+            }
+        }
+    }
+
+    .payment-option {
+        &.giftcardaccount {
+            .form-giftcard-account {
+                .label {
+                    font-size: 13.5px;
+                    color: @color-gray-darken3;
+                }
+                .actions-toolbar {
+                    .action.primary {
+                        &:hover {
+                            color: @color-white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .giftcard {
+        &.form {
+            .fieldset {
+                &.giftcard {
+                    .field {
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .modal-popup {
+        &.custom-giftcard-popup {
+            .gift-popup-header,
+            .gift-popup-footer {
+                .gift-logo {
+                    img {
+                        max-width: 80px;
+                    }
+                }
+            }
+            .gc-img-grid {
+                img {
+                    height: 100px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .payment-option {
+        &.giftcardaccount {
+            .form-giftcard-account {
+                .actions-toolbar {
+                    > .primary,
+                    .secondary {
+                        display: inline-block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .modal-popup {
+        &.custom-giftcard-popup {
+            .modal-inner-wrap {
+                width: 700px;
+            }
+        }
+    }
+
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .modal-popup {
+        &.custom-giftcard-popup {
+            .modal-inner-wrap {
+                width: 70%;
+            }
+            .gc-img-grid {
+                img {
+                    height: 220px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .payment-option {
+        &.giftcardaccount {
+            .form-giftcard-account {
+                .actions-toolbar {
+                    .secondary {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

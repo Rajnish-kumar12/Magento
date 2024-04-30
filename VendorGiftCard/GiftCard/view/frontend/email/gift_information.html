@@ -1,0 +1,167 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "You've been sent a gift from %store_name" store_name=$store.frontend_name |raw}} @-->
+<!--@vars {
+"template config_path=\"design\/email\/footer_template\"":"Email Footer Template",
+"template config_path=\"design\/email\/header_template\"":"Email Header Template",
+"var logo_alt":"Email Logo Image Alt",
+"var logo_url":"Email Logo Image URL",
+"var balance":"Gift Card Balance",
+"var giftcards|raw":"Gift Card Codes",
+"var name|escape":"Recipient Name",
+"var gift_message|escape|nl2br":"Sender Gift Message",
+"var sender_name":"Sender Name",
+"var sender_name_with_email|escape":"Sender Name with Email",
+"var store.frontend_name|escape":"Store Name",
+"store url=\"\"":"Store URL",
+"var this.getUrl($store,'',[_nosid:1])":"Current Store URL",
+"var is_redeemable":"Is Redeemable",
+"var is_multiple_codes":"Is Multiple Codes",
+"var barcode":"Barcode of giftcard",
+"var product_image":"Product Image"
+
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table width="100%">
+    <tbody>
+        <tr>
+            <td class="gift-card-header">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td class="gift-surprise-content">
+                                <h2 class="title-text">كرت هدية</h2>
+                                <p>Just For You</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td class="gift-card-product-img">
+                {{var product_image |raw}}
+            </td>            
+        </tr>
+
+        <tr>
+            <td class="gift-card-info">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td class="gift-info-title">
+                                <h3 class="title-text">Gift Card Information</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="gift-info-content">
+                                <table width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td>{{trans "اسم المرسل :"}}</td>
+                                            <td>{{trans "%sender_name" sender_name=$sender_name}}</td>
+                                        </tr>
+                                        {{depend gift_message}}
+                                        <tr>
+                                            <td>{{trans "رسالة :"}}</td>
+                                            <td>{{var gift_message|escape|nl2br}}</td>
+                                        </tr>
+                                        {{/depend}}
+                                        <tr>
+                                            {{if is_multiple_codes}}
+                                            <td>{{trans "Gift Card Codes :"}}</td>
+                                            {{else}}
+                                            <td>{{trans "Gift Card Code :"}}</td>
+                                            {{/if}}
+                                            <td>{{var giftcards|raw}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="gift-action-button">
+                                <a href="#">Shop Now</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="gift-message">
+                <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td class="gift-info-title">
+                                <h3 class="title-text">Gift message for you</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>{{trans '%sender has sent you a gift card for use at <a href="%store_url">%store_name</a> and it is now ready to be used for purchases.'
+                                sender=$sender_name_with_email
+                                store_url=$this.getUrl($store,'',[_nosid:1])
+                                store_name=$store.frontend_name |raw}}</p>
+
+                                <p>
+                                    {{if is_multiple_codes}}
+                                    {{trans
+                                        'Each card has a balance of %balance that can be used at <a href="%store_url">%store_name</a>.'
+
+                                        balance=$balance
+                                        store_url=$this.getUrl($store,'',[_nosid:1])
+                                        store_name=$store.frontend_name
+                                    |raw}}
+                                    {{else}}
+                                    {{trans
+                                        'The card has a balance of %balance that can be used at <a href="%store_url">%store_name</a>.'
+
+                                        balance=$balance
+                                        store_url=$this.getUrl($store,'',[_nosid:1])
+                                        store_name=$store.frontend_name
+                                    |raw}}
+                                    {{/if}}
+                                </p>
+                                {{if is_redeemable}}
+                                <p>{{trans "Click on the code(s) above to redeem them into Store Credit."}}</p>
+                                {{/if}}
+
+                                <p>{{var barcode |raw}}</p>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="gift-img-gallery">
+                <table>
+                    <tr>
+                        <td class="gift-img-grid">
+                            <img src="https://midasfurniture.com/media/wysiwyg/twst/new_land/DSC_1250-2.jpg" alt="img1">
+                        </td>
+                        <td class="gift-img-grid">
+                            <img src="https://midasfurniture.com/media/wysiwyg/twst/new_land/New_Project.jpg" alt="img2">
+                        </td>
+                        <td class="gift-img-grid">
+                            <img src="https://midasfurniture.com/media/wysiwyg/twst/new_land/DSC_1304-2B.jpg" alt="img3">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+{{template config_path="design/email/footer_template"}}

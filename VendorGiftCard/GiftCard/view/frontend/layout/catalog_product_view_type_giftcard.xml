@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <script src="VendorGiftCard_GiftCard::js/popup-data.js"/>
+    </head>
+    <body>
+        <referenceContainer name="product.info.options.wrapper.bottom">
+            <block class="VendorGiftCard\GiftCard\Block\PreviewButton" name="preview.button" template="VendorGiftCard_GiftCard::preview_button.phtml" after="-" />
+        </referenceContainer>
+    </body>
+</page>

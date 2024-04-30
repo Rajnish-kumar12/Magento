@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- preference for account email -->
+    <preference for="Magento\GiftCardAccount\Model\EmailManagement" type="VendorGiftCard\GiftCard\Model\EmailManagementGiftCardAccount"/>
+
+    <!-- Preference for invoice email -->
+    <preference for="Magento\GiftCard\Model\GiftCardItemEmail" type="VendorGiftCard\GiftCard\Model\EmailManagementGiftCardInvoice"/>
+
+    <!-- Preferences for redeem functionality -->
+    <preference for="VendorGiftCard\GiftCard\Api\GiftCardManagementInterface" type="VendorGiftCard\GiftCard\Model\GiftCardRedeem"/>
+    <preference for="VendorGiftCard\GiftCard\Api\Data\GiftCardResponseInterface" type="VendorGiftCard\GiftCard\Model\GiftCardResponse"/>
+
+    <!-- Preferences for gift card validation -->
+    <preference for="VendorGiftCard\GiftCard\Api\GiftCardValidateInterface" type="VendorGiftCard\GiftCard\Model\GiftCardValidate"/>
+    <preference for="VendorGiftCard\GiftCard\Api\Data\GiftCardResponseValidateInterface" type="VendorGiftCard\GiftCard\Model\GiftCardResponseValidate" />
+</config>
