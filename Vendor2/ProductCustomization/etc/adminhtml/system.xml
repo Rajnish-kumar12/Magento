@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/system_file.xsd">
+    <system>
+        <section id="general" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Attribute Configuration</label>
+            <group id="product_attributes" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Attributes</label>
+                <field id="dropdown_attribute" type="select" translate="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Attribute Dropdown</label>
+                    <comment>Select a product attribute from the dropdown</comment>
+                    <source_model>Brainvire\ProductCustomization\Model\Config\Source\Attributes</source_model>
+                </field>
+                <field id="category_dropdown" type="select" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Dropdown</label>
+                    <comment>Select a category from the dropdown</comment>
+                    <source_model>Vendor2\ProductCustomization\Model\Config\Source\Categories</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Vendor2_ProductCustomization::css/custom-popup.css"/>
+    </head>
+    <body>
+        <!-- Add the custom attribute popup block -->
+        <referenceContainer name="product.info.form.content">
+            <block class="Vendor2\ProductCustomization\Block\Product\CustomAttributePopup" name="custom_wysiwyg_popup" template="Vendor2_ProductCustomization::product/custom_attribute_popup.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

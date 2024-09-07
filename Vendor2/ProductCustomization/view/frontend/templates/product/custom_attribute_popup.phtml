@@ -1,0 +1,21 @@
+<?php
+$attributeContent = $block->getCustomWysiwygAttributeContent();
+?>
+
+<?php if ($attributeContent): ?>
+    <!-- Link to trigger the popup modal -->
+    <a href="#" id="show-custom-attribute-popup">View More Info</a>
+
+    <!-- Modal HTML -->
+    <div id="custom-attribute-modal" style="display:none;">
+        <div class="popup-content">
+            <?= $attributeContent; ?>
+            <button type="button" id="close-custom-attribute-popup">Close</button>
+        </div>
+    </div>
+    
+    <!-- Load the custom JavaScript file -->
+    <script type="text/javascript">
+        require(['Brainvire_ProductCustomization/js/custom-popup']);
+    </script>
+<?php endif; ?>
