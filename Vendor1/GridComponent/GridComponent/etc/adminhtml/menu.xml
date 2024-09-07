@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vendor1::blog" title="Blog" module="Vendor1" sortOrder="51" resource="Vendor1::blog"/>
+        <add id="Vendor1::post" title="Manage Posts" module="Vendor1" sortOrder="10" action="blog/post" resource="Vendor1::post" parent="Brainvire_GridComponent::blog"/>
+    </menu>
+</config>
