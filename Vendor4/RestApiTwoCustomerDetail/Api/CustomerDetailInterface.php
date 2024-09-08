@@ -8,7 +8,7 @@ interface CustomerDetailInterface
      * Get customer details by email
      *
      * @param string $email
-     * @return \Brainvire\RestApiTwoCustomerDetail\Api\Data\CustomerDetailResponseInterface
+     * @return \Vendor4\RestApiTwoCustomerDetail\Api\Data\CustomerDetailResponseInterface
      */
     public function getCustomerByEmail($email);
 }
