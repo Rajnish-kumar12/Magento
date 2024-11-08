@@ -1,0 +1,93 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+
+            <!-- For Standard Shipping -->
+            
+            <standard>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Brainvire\SimpleShipping\Model\Carrier\Standard</model>
+                <name>Fixed</name>
+                <price>5.00</price>
+                <title>Standard</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available.</specificerrmsg>
+                <handling_type>F</handling_type>
+            </standard>
+
+            <!-- For Express Shipping -->
+
+            <express>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Brainvire\SimpleShipping\Model\Carrier\Express</model>
+                <name>Fixed</name>
+                <price>5.00</price>
+                <title>Express</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available.</specificerrmsg>
+                <handling_type>F</handling_type>
+            </express>
+
+            <!-- For Canada Express Shipping -->
+
+            <canada_express>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Brainvire\SimpleShipping\Model\Carrier\CanadaExpress</model>
+                <name>Fixed</name>
+                <price>5.00</price>
+                <title>Canada Express</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available.</specificerrmsg>
+                <handling_type>F</handling_type>
+            </canada_express>
+
+            <!-- For Priority Shipping -->
+
+            <priority_shipping>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Brainvire\SimpleShipping\Model\Carrier\PriorityShipping</model>
+                <name>Fixed</name>
+                <price>5.00</price>
+                <title>Priority Shipping</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available.</specificerrmsg>
+                <handling_type>F</handling_type>
+            </priority_shipping>
+
+            <!-- Canada Standard -->
+
+            <canada_standard>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Brainvire\SimpleShipping\Model\Carrier\CanadaStandard</model>
+                <name>Fixed</name>
+                <price>5.00</price>
+                <title>Canada Standard</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available.</specificerrmsg>
+                <handling_type>F</handling_type>
+            </canada_standard>
+
+            <!-- Canada Standard -->
+
+            <no_shipping>
+                <active>1</active>
+                <sallowspecific>0</sallowspecific>
+                <model>Brainvire\SimpleShipping\Model\Carrier\NoShipping</model>
+                <name>Fixed</name>
+                <price>5.00</price>
+                <title>No Shipping</title>
+                <type>I</type>
+                <specificerrmsg>This shipping method is not available.</specificerrmsg>
+                <handling_type>F</handling_type>
+            </no_shipping>
+
+        </carriers>
+    </default>
+</config>
